@@ -7,9 +7,9 @@ client.on('ready', () => {
 });
  
 
-const devs = ["401738121827319810","495680518365511721"]
+const devs = ["468479699543130132","468479699543130132"]
 
-const adminprefix = "-sh";
+const adminprefix = "-";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
