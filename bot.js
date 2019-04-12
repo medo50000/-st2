@@ -11,7 +11,7 @@ client.on('ready', function(){
     type: 1,
      url: 'https://www.twitch.tv/skwadraa',
     name: 'I AM BAD',
-    application_id: '477187715658547201',
+    application_id: '468479699543130132',
      assets: {
          large_image:   `${s[Math.floor(Math.random() * s.length)]}`,
   
