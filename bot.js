@@ -1,41 +1,26 @@
-const Discord = require("discord.js");
+@everyone | @here
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Toxic Codescopyright arrow_down
+const Discord = require('discord.js')
 const client = new Discord.Client();
-var prefix = "-";
-var adminprefix = '-'
-
-const developers = ["468479699543130132","id"]
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'pl')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-     if (message.content === (adminprefix + "leave")) {
-    message.guild.leave();        
-  } else  
-  if (message.content.startsWith(adminprefix + 'wt')) {
-  client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'ls')) {
-  client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**✅   ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'st')) {
-    client.user.setGame(argresult, "https://www.twitch.tv/dream");
-      message.channel.send(`**✅**`)
+client.on('ready', function(){
+ console.log(`Logged in as ${client.user.tag}!`);
+    
+   // var s = ['483063515981283354','483063446376677386','483063378726879232','483063354332545045','483063463179190293']; // صور اضافية 
+   var s = ['483055660209012736','480169573530861578','483055655800930315']; // الصور الي بتشتغل
+    setInterval(function (){
+    client.user.setPresence({
+ game: { 
+    type: 1,
+     url: 'https://www.twitch.tv/skwadraa',
+    name: 'I AM BAD',
+    application_id: '468479699543130132', // ايدي البوت او ايدي الحساب
+      assets: {
+         large_image:   `${s[Math.floor(Math.random() * s.length)]}`,
+  
+    }
   }
-  if (message.content.startsWith(adminprefix + 'setname')) {
-  client.user.setUsername(argresult).then
-      message.channel.send(`Changing The Name To ..**${argresult}** `)
-} else
-if (message.content.startsWith(adminprefix + 'setava')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
+    });
+    }, 5000);
 });
-
-
-client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
+client.login("token");
